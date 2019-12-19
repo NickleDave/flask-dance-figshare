@@ -27,12 +27,12 @@ def make_figshare_blueprint(
     Make a blueprint for authenticating with Facebook using OAuth 2. This requires
     a client ID and client secret from Facebook. You should either pass them to
     this constructor, or make sure that your Flask application config defines
-    them, using the variables :envvar:`FACEBOOK_OAUTH_CLIENT_ID` and
-    :envvar:`FACEBOOK_OAUTH_CLIENT_SECRET`.
+    them, using the variables :envvar:`FIGSHARE_OAUTH_CLIENT_ID` and
+    :envvar:`FIGSHARE_OAUTH_CLIENT_SECRET`.
 
     Args:
-        client_id (str): The client ID for your application on Facebook.
-        client_secret (str): The client secret for your application on Facebook
+        client_id (str): The client ID for your application on Figshare.
+        client_secret (str): The client secret for your application on Figshare
         scope (str, optional): comma-separated list of scopes for the OAuth token
         redirect_url (str): the URL to redirect to after the authentication
             dance is complete
@@ -75,8 +75,8 @@ def make_figshare_blueprint(
         session_class=session_class,
         storage=storage,
     )
-    figshare_bp.from_config["client_id"] = "FACEBOOK_OAUTH_CLIENT_ID"
-    figshare_bp.from_config["client_secret"] = "FACEBOOK_OAUTH_CLIENT_SECRET"
+    figshare_bp.from_config["client_id"] = "FIGSHARE_OAUTH_CLIENT_ID"
+    figshare_bp.from_config["client_secret"] = "FIGSHARE_OAUTH_CLIENT_SECRET"
 
     @figshare_bp.before_app_request
     def set_applocal_session():
