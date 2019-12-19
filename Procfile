@@ -1,1 +1,1 @@
-web: gunicorn twitter:app --log-file=-
+web: gunicorn figshare_app:app --log-file=-
