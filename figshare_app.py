@@ -1,7 +1,7 @@
 import os
 from flask import Flask, redirect, url_for
 
-from .figshare_blueprint import make_figshare_blueprint, figshare
+from figshare_blueprint import make_figshare_blueprint, figshare
 
 
 app = Flask(__name__)
